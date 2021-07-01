@@ -19,7 +19,7 @@ function GetWeatherInfo(location) {
     lat: location.latitude,
     lon: location.longitude,
     lang: "en", // English always
-    unit: "metric", // Assuming we will get it in metric always 
+    unit: "metric", // Assuming we will get it in metric always
   });
 }
 
@@ -27,7 +27,9 @@ function DisplayWidget(props) {
   const units =
     props.selectedWidget.units === undefined
       ? "metric"
-      : props.selectedWidget.units.toLowerCase();
+      : props.selectedWidget.units.toLowerCase() === "°celsius"
+      ? "metric"
+      : "imperial";
   const useStyles = makeStyles({
     root: {
       maxWidth: 545,

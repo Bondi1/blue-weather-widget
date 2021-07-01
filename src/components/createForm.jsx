@@ -64,7 +64,7 @@ export default function CreateForm(props) {
     setCreatedWidgets([...createdWidgets, weatherWidget]);
   };
 
-  const metric = [
+  const temperatureUnits = [
     { key: "°C", value: "°Celsius" },
     { key: "℉", value: "℉arenheit" },
   ];
@@ -78,7 +78,7 @@ export default function CreateForm(props) {
     setWidget(event.target.value);
   };
 
-  const saveMetric = (value) => {
+  const saveTemperatureUnits = (value) => {
     setUnits(value);
   };
 
@@ -128,10 +128,10 @@ export default function CreateForm(props) {
         <div>
           <RadioButtonsGroup
             title="Temperature"
-            name="metric"
-            values={metric}
+            name="TemperatureUnits"
+            values={temperatureUnits}
             value={units}
-            handleChildChange={(value) => saveMetric(value)}
+            handleChildChange={(value) => saveTemperatureUnits(value)}
           />
         </div>
         <div>
