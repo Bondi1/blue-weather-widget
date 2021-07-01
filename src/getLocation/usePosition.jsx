@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-
+/**
+ *  UsePosition hook to use the posiiton info from navigator geolocation
+ * @returns posiiton info with latitude and longitude
+ */
 export const usePosition = () => {
   const [position, setPosition] = useState({});
   const [error, setError] = useState(null);

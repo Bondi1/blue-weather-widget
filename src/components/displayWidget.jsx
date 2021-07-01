@@ -8,13 +8,18 @@ import useOpenWeather from "../openWeather/useOpenWeather";
 import { usePosition } from "../getLocation/usePosition";
 import "../../src/css/widget.css";
 
-function Refresh(location) {
+const APP_ID_KEY = "785cd7c93337f5043e4584522cf4392d";
+
+/**
+ * A Card to show the weather based on the chosen widget
+ */
+function GetWeatherInfo(location) {
   return useOpenWeather({
-    key: "785cd7c93337f5043e4584522cf4392d",
+    key: APP_ID_KEY,
     lat: location.latitude,
     lon: location.longitude,
-    lang: "en",
-    unit: "metric",
+    lang: "en", // English always
+    unit: "metric", // Assuming we will get it in metric always 
   });
 }
 
@@ -31,7 +36,7 @@ function DisplayWidget(props) {
   });
   const classes = useStyles();
   const location = usePosition();
-  let { data, isLoading, errorMessage } = Refresh(location);
+  let { data, isLoading, errorMessage } = GetWeatherInfo(location);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -43,6 +48,7 @@ function DisplayWidget(props) {
     return <div>{errorMessage}</div>;
   }
 
+  // Conversion logic based on the options chosen
   const title =
     props.selectedWidget.widget === undefined
       ? "Default"
@@ -57,6 +63,8 @@ function DisplayWidget(props) {
   const windSpeedValue =
     units === "imperial" ? data.wind * 2.237 : data.wind * 3.6; // by default the speed in metre per sec
   const icon = `https://openweathermap.org/img/wn/${data.icon}@4x.png`;
+
+  // Add the info onto a card and return
   return (
     <Card className={classes.root}>
       <div className="row">

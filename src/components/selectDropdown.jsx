@@ -6,6 +6,11 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
+/**
+ * A dropdown to display all the widgets and select one
+ * 
+ */
+
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -24,7 +29,7 @@ export default function SelectDropdown(props) {
     const filteredWidgets = allWidgets.filter(
       (m) => m.widget === event.target.value
     );
-    // TODO handle Undefined
+  
     props.setSelectedWidget(filteredWidgets[0]);
   };
   const menuItemArray = allWidgets.map((m) => {

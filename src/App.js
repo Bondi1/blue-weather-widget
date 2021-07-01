@@ -6,7 +6,15 @@ import SelectWidget from "./components/selectDropdown";
 import logo from "./images/logo-blue-web.png";
 import "./App.css";
 
+/**
+ * Main App file that brings all the components together
+ * Three components: 
+ *  1. A form to create new widgets
+ *  2. A dropdown to display all the widgets and select one
+ *  3. A Card to show the weather based on the chosen widget
+ */
 function App() {
+  // Need to share the list of created widgets and the selected widgets
   const [createdWidgets, setCreatedWidgets] = useState([]);
   const [selectedWidget, setSelectedWidget] = useState("");
   return (

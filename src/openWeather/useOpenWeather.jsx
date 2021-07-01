@@ -1,6 +1,15 @@
 import { useEffect, useReducer, useState } from "react";
 import axios from "axios";
+/**
+ * React file to to manage the interaction with openweather api
+ * 
+ */
 
+/**
+ * mapCurrent function to transform the openweather data into a targeted structure
+ * @param {*} data 
+ * @returns data structure with weather info for the current location
+ */
 // data from onecall api
 export const mapCurrent = (data) => {
   return {
@@ -26,7 +35,7 @@ export const mapCurrent = (data) => {
 //       icon: data.weather[0].icon,
 //       temperature: {
 //         current: data.main.temp.toFixed(0),
-//         min: data.main.temp_min, // openweather doesnt provide min/max on current weather
+//         min: data.main.temp_min, // openweather provide min/max on current weather api
 //         max: data.main.temp_max,
 //       },
 //       wind: data.wind.speed.toFixed(0),
@@ -58,6 +67,7 @@ export const fetchReducer = (state, { type, payload }) => {
 };
 
 const useOpenWeather = (options) => {
+  // We could use the onecall or the weather api
   //const endpoint = '//api.openweathermap.org/data/2.5/weather';
   const endpoint = "//api.openweathermap.org/data/2.5/onecall";
   const [state, dispatch] = useReducer(fetchReducer, initialState);

@@ -5,6 +5,12 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 
+/**
+ *  Bunch up the radio buttons into a group
+ * @param {*} props input from the create form 
+ * @returns radio button group
+ * This is a modular component which is being used for radio buttons
+ */
 export default function RadioButtonsGroup(props) {
   const { title, name, values, value, handleChildChange } = props;
   const radioControls = values.map((m) => {

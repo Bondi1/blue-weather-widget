@@ -4,11 +4,16 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Button from "@material-ui/core/Button";
 import RadioButtonsGroup from "./radioButtonsGroup";
+/**
+ * A form to create new widgets using a modal using Material UI
+ */
 
+// Need to random function to place the modal
 function rand() {
   return Math.round(Math.random() * 15) - 10;
 }
 
+// Modal Styling
 function getModalStyle() {
   const top = 50 + rand();
   const left = 50 + rand();
@@ -30,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
   },
 }));
+
+/**
+ * 
+ * @param {*} props - Need to set created widgets into the props
+ * @returns A modal and a button to invoke the button
+ */
 
 export default function CreateForm(props) {
   const { setCreatedWidgets, createdWidgets } = props;
@@ -82,6 +93,8 @@ export default function CreateForm(props) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  // Body of the Modal with a text box and a radio button pair for temperature and wind
   const body = (
     <div style={modalStyle} className={classes.paper}>
       <h2 id="modal-title">Weather Widget</h2>
