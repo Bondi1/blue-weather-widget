@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
-    "@testing-library/react": "^11.1.0",
+    "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "identity-obj-proxy": "^3.0.0",
@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,15 +38,16 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-syntax-jsx": "^7.14.5"
+    "@babel/plugin-syntax-jsx": "^7.14.5",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/react-hooks": "^7.0.1",
+    "axios-mock-adapter": "^1.19.0",
+    "react-test-renderer": "^17.0.2"
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(css|less|sass|scss)$": "<rootDir>/src/tests/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/src/tests/__mocks__/fileMock.js"
-    },
-    "globals": {
-      "window": {}
+      "\\.(css|less|sass|scss)$": "<rootDir>/src/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/src/__mocks__/fileMock.js"
     }
   }
 }

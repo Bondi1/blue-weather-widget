@@ -41,7 +41,7 @@ function DisplayWidget(props) {
   let { data, isLoading, errorMessage } = GetWeatherInfo(location);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div title="loading">Loading...</div>;
   }
   if (data === null) {
     return <div>Data Unavailable</div>;
@@ -68,7 +68,7 @@ function DisplayWidget(props) {
 
   // Add the info onto a card and return
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} title="widget">
       <div className="row">
         <div className="column">
           <img src={icon} alt="weather" />

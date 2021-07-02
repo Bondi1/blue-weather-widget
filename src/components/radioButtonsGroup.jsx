@@ -26,7 +26,7 @@ export default function RadioButtonsGroup(props) {
   });
 
   return (
-    <FormControl component="fieldset">
+    <FormControl component="fieldset" title={`form-control-${title}`}>
       <FormLabel component="legend">{title}</FormLabel>
       <RadioGroup
         aria-label={name}

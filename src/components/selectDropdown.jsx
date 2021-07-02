@@ -7,7 +7,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
 /**
- * A dropdown to display all the widgets and select one
+ * A dropdown to display all the widgets and select one 
  * 
  */
 
