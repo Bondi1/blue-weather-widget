@@ -8,7 +8,7 @@ import useOpenWeather from "../openWeather/useOpenWeather";
 import { usePosition } from "../getLocation/usePosition";
 import "../../src/css/widget.css";
 
-const APP_ID_KEY = "785cd7c93337f5043e4584522cf4392d";
+const APP_ID_KEY = "";
 
 /**
  * A Card to show the weather based on the chosen widget
